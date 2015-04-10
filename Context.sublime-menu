@@ -1,0 +1,21 @@
+[
+		    {
+		        "id": "timestamp",
+		        "caption": "Timestamp",
+		        "children":
+		        [
+		            {
+		                "caption": "Insert...",
+		                "command": "ptstimestamp"
+		            },
+		            {
+		                "caption": "Compute Duration",
+		                "command": "ptsduration"
+		            },
+		            {
+		                "caption": "Report -> Clipboard",
+		                "command": "ptsreport"
+		            }
+		        ]
+		    }
+]
