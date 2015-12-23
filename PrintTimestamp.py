@@ -49,3 +49,24 @@ class PtsreportCommand(sublime_plugin.TextCommand):
                     project = line.split()[0]
                 report[project] = report.get(project, 0.) + delta
         sublime.set_clipboard(pprint.pformat(report, depth=1, indent=4))
+
+
+class PtsreportsumCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        report = {}
+        wholedoc = self.view.sel()[0]
+        lines = self.view.lines(wholedoc)
+        for line in lines:
+            line = self.view.substr(line)
+            delta = duration(line)
+            if delta is not None:
+                if "[" in line.split()[0]:
+                    project = None
+                else:
+                    project = line.split()[0]
+                report[project] = report.get(project, 0.) + delta
+        s = 0
+        for k in report:
+            s += report[k]
+        sublime.set_clipboard(str(s))
+

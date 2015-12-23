@@ -19,6 +19,10 @@
 		            {
 		                "caption": "Report -> Clipboard",
 		                "command": "ptsreport"
+		            },
+		            {
+		                "caption": "Create Report and Sum Hours",
+		                "command": "ptsreportsum"
 		            }
 		        ]
 		    }
